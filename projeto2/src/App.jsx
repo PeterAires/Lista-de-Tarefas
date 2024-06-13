@@ -1,5 +1,5 @@
 import { useState } from 'react'
-
+import './App.css'
 
 function App() {
   //simulando um banco de dados
@@ -20,7 +20,7 @@ function App() {
     {
       id: 3,
       text: 'Estudar React',
-      category: 'Estudpos',
+      category: 'Estudos',
       isCompleted: false,
     }
   ])
@@ -35,8 +35,12 @@ function App() {
             <div className='conteudo'>
               <p>{todo.text}</p>
               <p className='categotia'>
-                {todo.category}
+                ({todo.category})
               </p>
+            </div>
+            <div>
+              <button>Completar Tarefa</button>
+              <button>X</button>
             </div>
           </div>
          ))}
