@@ -1,5 +1,8 @@
 import { useState } from 'react'
 import './App.css'
+import Todo from './componentes/Todo'
+import TodoFormulario from './componentes/TodoFormulario'
+
 
 function App() {
   //simulando um banco de dados
@@ -31,20 +34,10 @@ function App() {
       <h1>Lista de Tarefas</h1>
       <div className='todo-lista'>
          {todos.map((todo) => (
-          <div className='todo'>
-            <div className='conteudo'>
-              <p>{todo.text}</p>
-              <p className='categotia'>
-                ({todo.category})
-              </p>
-            </div>
-            <div>
-              <button>Completar Tarefa</button>
-              <button>X</button>
-            </div>
-          </div>
+          <Todo todo={todo}/>
          ))}
       </div>
+      <TodoFormulario/>
     </div>
   )
 }
