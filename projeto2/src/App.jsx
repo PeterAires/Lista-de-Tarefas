@@ -37,9 +37,9 @@ function App() {
     <div className='app'>
       <h1>Lista de Tarefas</h1>
       <div className='todo-lista'>
-        {todoVazio ? (<p>lista vazia</p>)
+        {todoVazio ? (<p>A lista esta vazia :(</p>)
         : 
-        (<p>lista cheia</p>)
+        (<p></p>)
         }
 
          {todos.map((todo) => (

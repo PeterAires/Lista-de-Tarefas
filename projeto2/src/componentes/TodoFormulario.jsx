@@ -7,7 +7,10 @@ const TodoFormulario = ({adicionarTodo}) => {
     const Formulario = (e) => {
       //função abaixo para evitar o recarregamento da pagina pelo formulario 
         e.preventDefault()
-        if(!titulo || !categoria) return;
+        if(!titulo || !categoria) {
+          window.alert('faltou algo')
+          return
+        };
         adicionarTodo(titulo,categoria)
         setTitulo('')
         setCategoria('')
