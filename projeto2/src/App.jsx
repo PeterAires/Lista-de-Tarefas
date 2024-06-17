@@ -41,7 +41,7 @@ function App() {
         : 
         (<p></p>)
         }
-
+          
          {todos.map((todo) => (
           <Todo key={todo.id} todo={todo} removerTodo={removerTodo} completarTodos={completarTodos}/>
          ))}

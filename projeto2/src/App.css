@@ -1,3 +1,12 @@
+@keyframes AparecerTarefa{
+  to{
+    opacity: 1;
+  }
+  from{
+    opacity: 0;
+  }
+}
+
 body{
   font-family: Arial, Helvetica, sans-serif;
   background-color: #F4F4F4;
@@ -46,6 +55,7 @@ button:hover{
   margin-bottom: 20px;
   padding-bottom: 20px;
   border-bottom: 1px solid #555;
+  animation: AparecerTarefa 1s normal  normal ;
 }
 
 .todo{
