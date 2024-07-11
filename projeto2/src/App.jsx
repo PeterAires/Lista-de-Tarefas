@@ -5,6 +5,11 @@ import TodoFormulario from './componentes/TodoFormulario'
 
 
 function App() {
+
+  
+
+
+
   //simulando um banco de dados
   //objetos dentro do useState
   const [todos, setTodos] = useState([])
@@ -19,6 +24,14 @@ function App() {
       }] 
     setTodos(novoTodos)
   }
+
+  //Web Storage
+  // salvar dados
+  localStorage.setItem('tarefas', JSON.stringify(todos));
+  // resgatar os dados
+const tarefasLocalStorage = JSON.parse(localStorage.getItem('tarefas'))
+
+
 
   //primeiro recebos o id do todo, cada tarefa vai ter seu todo, o todo meio que é o cara que expoe o id, pois que colocar um onclick com a função removerTodo{todo.id} todo (como se fosse a tarefa aual) e o id(o id do todo que é a terefa atual)
   //criamos uma copia do array atual, e verificamos a condição:  se o todo.id (todo representa a TAREFA ATUAL, ou seja a tarefa que o usuario clikou) o id dela existe na lista, se existir ele remove deixando o todo null, ou seja deixando aquela tarefa atual nulo, mesmo que apagando,,,,, o filter aqui serve pra substituir coisas ou seja apagar,,,, no final mudar o todos para a copia que acabamos de criar
@@ -56,6 +69,10 @@ function App() {
          {todos.map((todo) => (
           <Todo key={todo.id} todo={todo} removerTodo={removerTodo} completarTodos={completarTodos}/>
          ))}
+         {tarefasLocalStorage.map((tarefa) => (
+  <Todo key={tarefa.id} todo={tarefa} removerTodo={removerTodo} completarTodos={completarTodos}/>
+ ))
+}
       </div>
       <TodoFormulario adicionarTodo={adicionarTodo}/>
     </div>
